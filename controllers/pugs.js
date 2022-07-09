@@ -14,7 +14,7 @@ exports.postAddPug = (req, res, next) => {
     "owner": req.body.owner
   };
 
-  const pug = Pug.new(pugParams);
+  const pug = new Pug(pugParams)
   pug.save();
   console.log("*SNORT* bow-wow!", pug);
   res.redirect('/pugs');
